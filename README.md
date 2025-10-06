@@ -57,9 +57,25 @@ Fine-tuning is now supported, which is incredibly powerful. You can adapt VibeVo
 ```bash
 git clone https://github.com/vibevoice-community/VibeVoice.git
 cd VibeVoice/
+```
 
+Install the PyTorch build that matches your hardware before installing the remaining dependencies. We intentionally leave `torch` out of the core dependency list so tools like `uv` won't overwrite your chosen wheel.
+
+**CUDA 12.8 nightly example**
+
+```bash
+uv pip install -r requirements/torch-nightly-cu128.txt
 uv pip install -e .
 ```
+
+Prefer `pip`? Use the same requirements file:
+
+```bash
+pip install -r requirements/torch-nightly-cu128.txt
+pip install -e .
+```
+
+For CPU-only, different CUDA/ROCm versions, or stable PyTorch releases, install the appropriate PyTorch package first, then run `uv pip install -e .` to fetch the rest of VibeVoice's dependencies.
 
 ## Usage
 

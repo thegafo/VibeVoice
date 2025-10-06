@@ -16,8 +16,8 @@ classifiers = [
     # "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+# Torch is intentionally excluded so users can install the correct CPU/GPU build themselves.
 dependencies = [
-    "torch",
     "accelerate==1.6.0",
     "transformers==4.51.3", # we develop this project on transformers==4.51.3, later version may not be compatible
     "datasets==3.5.0", # avoid issues with torchcodec
